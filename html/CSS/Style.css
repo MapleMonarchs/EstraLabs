@@ -1,3 +1,4 @@
-.headerHeadline {
+.headerHeadline, .copyright {
     text-align: center;
+    font-family: 'OCR A';
 }

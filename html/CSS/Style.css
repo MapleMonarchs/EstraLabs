@@ -19,4 +19,18 @@ main {
     background-color: #6666FF;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 7px;
+}
+
+#shoppingCart {
+    position: fixed;
+    right: 15vw;
+}
+
+a {
+    text-decoration: none;
+}
+
+.advertImage {
+    max-width:75vw;
 }

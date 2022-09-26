@@ -4,14 +4,34 @@ h1, p, a {
     color: #0000FF;
 }
 
+#headerHeadline {
+    font-family: 'OCR A';
+    color: #0000FF;
+    text-align: left;
+    display: inline;
+    position: fixed;
+    left: 0;
+    top: 10px;
+    margin: 0;
+}
+
+#headerHeadlineText {
+    vertical-align: 40px;
+}
+
 body {
     background-color: #FF1CAA;
 }
 
 .navLinks {
-    text-align: center;
     padding-left: 2vw;
     font-size: 20px;
+    vertical-align: -30px;
+}
+
+#navLinks {
+    position: fixed;
+    right: 300px;
 }
 
 main {
@@ -24,7 +44,8 @@ main {
 
 #shoppingCart {
     position: fixed;
-    right: 13vw;
+    right: 230px;
+    top: 10px;
 }
 
 a {
@@ -37,15 +58,17 @@ a {
 
 #top {
     background-color: #FF1CAA;
-    text-align: center;
+    text-align: right;
     position: fixed;
     width: 100vw;
     top: 0;
+    height: 90px;
 }
 
 #contrastButton {
     position: fixed;
-    left: 13vw;
+    right: 10px;
+    top: 10px;
     background-color: #000000;
     border: none;
     border-radius: 15px;
@@ -53,4 +76,7 @@ a {
     font-family: 'OCR A';
     font-size: 18pt;
     padding: 8px;
+}
+
+.products {
 }

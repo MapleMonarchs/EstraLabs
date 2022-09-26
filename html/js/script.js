@@ -34,8 +34,29 @@ function getUrlVars() {
 }
 
 function load() {
+    checkContrast();
+    updateYear();
+    positionProducts();
+}
+
+function checkContrast() {
     if (getUrlVars()["contrast"] == 1) {
         changeContrast();
     }
-    document.getElementById("year").innerHTML = new Date().getFullYear() ;
+}
+
+function updateYear() {
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+}
+
+function positionProducts() {
+    const main = document.getElementsByTagName("main")[0];
+    const products = document.getElementsByClassName("products");
+    let mainWidth = main.offsetWidth;
+    for (let i = 0; i < products.length; i++) {
+        console.log(products[i].style.marginLeft)
+        console.log(((mainWidth - (3 * products[i].offsetWidth)) / 4).toString())
+        products[i].style.marginLeft = ((mainWidth - (3 * products[i].offsetWidth)) / 4).toString() + "px";
+        console.log(products[i].style.marginLeft)
+    }
 }

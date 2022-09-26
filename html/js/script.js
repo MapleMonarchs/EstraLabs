@@ -33,8 +33,9 @@ function getUrlVars() {
     return vars;
 }
 
-function checkTheme() {
+function load() {
     if (getUrlVars()["contrast"] == 1) {
         changeContrast();
     }
+    document.getElementById("year").innerHTML = new Date().getFullYear() ;
 }

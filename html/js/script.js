@@ -2,13 +2,17 @@ let productsPerLine = 3;
 
 function changeContrast() {
     const button = document.getElementById("contrastButton");
+    const main = document.getElementsByTagName("main")[0];
     const body = document.body;
     const top = document.getElementById("top");
     const internalAs = document.getElementsByClassName("internal");
+    const firstColor = '#FF1CAA';
+    const secondColor = '#FFAAFF';
     if (button.innerText == "More Contrast") {
         button.innerHTML = "Less Contrast";
-        body.style.backgroundColor = '#ffbde6';
-        top.style.backgroundColor = '#ffbde6';
+        body.style.backgroundColor = secondColor;
+        top.style.backgroundColor = secondColor;
+        main.style.backgroundColor = secondColor;
         if (getUrlVars()["contrast"] == undefined) {
             window.history.pushState("", "Estra Labs More Contrast", "?&contrast=1")
         }
@@ -17,8 +21,9 @@ function changeContrast() {
         }
     } else {
         button.innerHTML = "More Contrast";
-        body.style.backgroundColor = '#FF1CAA';
-        top.style.backgroundColor = '#FF1CAA';
+        body.style.backgroundColor = firstColor;
+        top.style.backgroundColor = firstColor;
+        main.style.backgroundColor = firstColor;
         window.location.search = "";
         for (i = 0; i < internalAs.length; i++) {
             internalAs[i].href = internalAs[i].href.slice(0, internalAs[i].href.indexOf('?'));

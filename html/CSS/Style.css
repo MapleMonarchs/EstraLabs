@@ -1,4 +1,4 @@
-h1, p, a {
+h1, h2, p, a {
     text-align: center;
     font-family: 'OCR A';
     color: #0000FF;
@@ -62,7 +62,9 @@ a {
     position: fixed;
     width: 100vw;
     top: 0;
+    left: 0;
     height: 90px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 #contrastButton {
@@ -89,5 +91,15 @@ a {
 .products {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.productName {
+    margin-bottom: 5px;
+}
+
+.productType {
+    margin-top: 0px;
 }

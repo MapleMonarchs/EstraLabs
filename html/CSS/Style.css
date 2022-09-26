@@ -1,7 +1,7 @@
 h1, p, a {
     text-align: center;
     font-family: 'OCR A';
-    color: #0B70FB;
+    color: #0000FF;
 }
 
 body {
@@ -16,15 +16,15 @@ body {
 
 main {
     width: 75%;
-    background-color: #6666FF;
+    background-color: #AAFFAA;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 7px;
+    border-radius: 15px;
 }
 
 #shoppingCart {
     position: fixed;
-    right: 15vw;
+    right: 13vw;
 }
 
 a {
@@ -33,4 +33,24 @@ a {
 
 .advertImage {
     max-width:75vw;
+}
+
+#top {
+    background-color: #FF1CAA;
+    text-align: center;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+}
+
+#contrastButton {
+    position: fixed;
+    left: 13vw;
+    background-color: #000000;
+    border: none;
+    border-radius: 15px;
+    color: #FFFFFF;
+    font-family: 'OCR A';
+    font-size: 18pt;
+    padding: 8px;
 }

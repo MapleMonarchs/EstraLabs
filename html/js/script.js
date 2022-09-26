@@ -1,3 +1,5 @@
+let productsPerLine = 3;
+
 function changeContrast() {
     const button = document.getElementById("contrastButton");
     const body = document.body;
@@ -52,11 +54,20 @@ function updateYear() {
 function positionProducts() {
     const main = document.getElementsByTagName("main")[0];
     const products = document.getElementsByClassName("products");
+    const productUl = document.getElementsByClassName("productsUl")[0];
     let mainWidth = main.offsetWidth;
-    for (let i = 0; i < products.length; i++) {
-        console.log(products[i].style.marginLeft)
-        console.log(((mainWidth - (3 * products[i].offsetWidth)) / 4).toString())
-        products[i].style.marginLeft = ((mainWidth - (3 * products[i].offsetWidth)) / 4).toString() + "px";
-        console.log(products[i].style.marginLeft)
+    let productUlGridTemplateColumns = "";
+    for (let i = 0; i < productsPerLine; i++) {
+        if (products[i]) {
+            productUlGridTemplateColumns += (((mainWidth - (productsPerLine * products[i].offsetWidth)) / (productsPerLine + 1)) + products[i].offsetWidth).toString() + "px ";
+        }
     }
+    for (let i = 0; i < products.length; i++) {
+        products[i].style.marginLeft = ((mainWidth - (productsPerLine * products[i].offsetWidth)) / (productsPerLine + 1)).toString() + "px";
+    }
+    productUl.style.gridTemplateColumns = productUlGridTemplateColumns;
+}
+
+function resize() {
+    positionProducts();
 }

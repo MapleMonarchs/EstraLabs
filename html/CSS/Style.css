@@ -78,5 +78,16 @@ a {
     padding: 8px;
 }
 
+.productsUl {
+    display: grid;
+    list-style-type: none;
+    padding-left: 0;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
 .products {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="CSS\Style.css" media="screen" />
     <script src="js\script.js" type="text/javascript"></script>
 </head>
-<body onload="load()">
+<body onload="load()" onresize="resize()">
     <div id="top">
         <header>
             <h1 id="headerHeadline">
@@ -41,9 +41,10 @@
     <br />
     <br />
     <main>
-        <a class="internal products"><img src="images/placeholderBottle.png" /></a>
-        <a class="internal products"><img src="images/placeholderBottle.png" /></a>
-        <a class="internal products"><img src="images/placeholderBottle.png" /></a>
+        <ul class="productsUl">
+            <li><a class="internal products" href="estraena.html"><img src="images/placeholderBottle.png" /><h1>Estraena</h1></a></li>
+            <li><a class="internal products" href="estraval.html"><img src="images/placeholderBottle.png" /><h1>Estraval</h1></a></li>
+        </ul>
     </main>
     <footer>
         <p id="copyright">&copy; <span id="year"></span> EstraLabs</p>

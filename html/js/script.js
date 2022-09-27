@@ -44,6 +44,7 @@ function load() { //happens on site load
     checkContrast();
     updateYear();
     positionProducts();
+    assingMaxWidths();
 }
 
 function checkContrast() {
@@ -57,22 +58,31 @@ function updateYear() { //updates the year to the current one in the copyright s
 }
 
 function positionProducts() { //positions products on sites with products in a grid pattern with amount of columns given by productsPerLine
-    const main = document.getElementsByTagName("main")[0];
-    const products = document.getElementsByClassName("products");
     const productUl = document.getElementsByClassName("productsUl")[0];
-    let mainWidth = main.offsetWidth;
-    let productUlGridTemplateColumns = "";
-    for (let i = 0; i < productsPerLine; i++) {
-        if (products[i]) {
-            productUlGridTemplateColumns += (((mainWidth - (productsPerLine * products[i].offsetWidth)) / (productsPerLine + 1)) + products[i].offsetWidth).toString() + "px "; //add width of list Items to the Grid Template: left margin + itemWidth; produces a String to later be assigned to the style value
+    if (productUl) {
+        const main = document.getElementsByTagName("main")[0];
+        const products = document.getElementsByClassName("products");
+        let mainWidth = main.offsetWidth;
+        let productUlGridTemplateColumns = "";
+        for (let i = 0; i < productsPerLine; i++) {
+            if (products[i]) {
+                productUlGridTemplateColumns += (((mainWidth - (productsPerLine * products[i].offsetWidth)) / (productsPerLine + 1)) + products[i].offsetWidth).toString() + "px "; //add width of list Items to the Grid Template: left margin + itemWidth; produces a String to later be assigned to the style value
+            }
         }
+        for (let i = 0; i < products.length; i++) {
+            products[i].style.marginLeft = ((mainWidth - (productsPerLine * products[i].offsetWidth)) / (productsPerLine + 1)).toString() + "px"; //calculate proper left margin to have this many items in one line with the same distance: Formula: margin = (totalWidth - columnNumber * itemWidth)/(columnNumber + 1)
+        }
+        productUl.style.gridTemplateColumns = productUlGridTemplateColumns;
     }
-    for (let i = 0; i < products.length; i++) {
-        products[i].style.marginLeft = ((mainWidth - (productsPerLine * products[i].offsetWidth)) / (productsPerLine + 1)).toString() + "px"; //calculate proper left margin to have this many items in one line with the same distance: Formula: margin = (totalWidth - columnNumber * itemWidth)/(columnNumber + 1)
-    }
-    productUl.style.gridTemplateColumns = productUlGridTemplateColumns;
 }
 
 function resize() { //happens on site resize
     positionProducts();
+    assingMaxWidths()
+}
+
+function assingMaxWidths() {
+    const nav = document.getElementsByTagName("nav")[0];
+    const navLinksSpan = document.getElementById("navLinks");
+    navLinksSpan.style.maxWidth = (1.02*nav.offsetWidth - 548).toString() +"px";
 }

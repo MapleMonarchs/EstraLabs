@@ -55,18 +55,30 @@
     </div>
     <main>
         <div id="logIn">
-            <h2>Log In</h2>
+            <h2>Sign Up</h2>
             <div id="userName">
-                <span id="userNameTxt">User Name:</span><input class="logInInput" type="text"/>
+                <span id="userNameTxt">First Name:</span><input class="logInInput" type="text" /><span class="requiredStar">*</span>
+            </div>
+            <div id="userName">
+                <span id="userNameTxt">Surname:</span><input class="logInInput" type="text" />
+            </div>
+            <div id="userName">
+                <span id="userNameTxt">User Name:</span><input class="logInInput" type="text" /><span class="requiredStar">*</span>
+            </div>
+            <div id="userName">
+                <span id="userNameTxt">E-Mail:</span><input class="logInInput" type="text" /><span class="requiredStar">*</span>
             </div>
             <div id="password">
-                <span id="passwordTxt">Password:</span><input class="logInInput" type="password"/>
+                <span id="passwordTxt">Password:</span><input class="logInInput" type="password" /><span class="requiredStar">*</span>
+            </div>
+            <div id="confirmPassword">
+                <span id="passwordTxt">Confirm Password:</span><input class="logInInput" type="password" /><span class="requiredStar">*</span>
             </div>
             <button id="logInButton">
-                Log In!
+                Sign Up!
             </button>
             <br />
-            <a class="internal" style="margin-top: 10px;" href="signup.html">Sign up here</a>
+            <span>Fields with a * are required.</span>
         </div>
     </main>
     <footer>

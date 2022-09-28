@@ -51,7 +51,8 @@ function load() { //happens on site load
     checkContrast();
     updateYear();
     positionProducts();
-    assingMaxWidths();
+    assignMaxWidths();
+    assignMinHeight();
 }
 
 function checkContrast() {
@@ -85,11 +86,18 @@ function positionProducts() { //positions products on sites with products in a g
 
 function resize() { //happens on site resize
     positionProducts();
-    assingMaxWidths()
+    assignMaxWidths();
+    assignMinHeight();
 }
 
-function assingMaxWidths() {
+function assignMaxWidths() {
     const nav = document.getElementsByTagName("nav")[0];
     const navLinksSpan = document.getElementById("navLinks");
     navLinksSpan.style.maxWidth = (1.02*nav.offsetWidth - 548).toString() +"px";
+}
+
+function assignMinHeight() {
+    const main = document.getElementsByTagName("main")[0];
+    const footer = document.getElementsByTagName("footer")[0];
+    main.style.minHeight = (window.innerHeight - (parseInt(window.getComputedStyle(main).marginTop) + footer.offsetHeight + parseInt(window.getComputedStyle(footer).marginBottom) + parseInt(window.getComputedStyle(footer).marginTop))).toString() + "px";
 }

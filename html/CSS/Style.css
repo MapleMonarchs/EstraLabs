@@ -43,6 +43,15 @@ main {
     margin-top: 163.8px;
 }
 
+p {
+    margin: 0;
+}
+
+footer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 #shoppingCart {
     position: fixed;
     right: 230px;
@@ -113,8 +122,13 @@ a {
     margin-right: 10px;
 }
 
-#userName {
+#userName, #password {
     margin-bottom: 15px;
+}
+
+.requiredStar {
+    font-size: 10pt;
+    vertical-align: 5pt;
 }
 
 .logInInput {
@@ -124,6 +138,14 @@ a {
 
 #logInButton {
     margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 10px;
+    font-family: 'OCR A';
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #000000;
 }
 
 .dropdownContainer {

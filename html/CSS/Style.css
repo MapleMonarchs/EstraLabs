@@ -1,4 +1,4 @@
-h1, h2, p, a {
+h1, h2, h3, p, a, #userNameTxt, #userName, #logIn, #password, #passwordTxt {
     text-align: center;
     font-family: 'OCR A';
     color: #0000FF;
@@ -40,6 +40,7 @@ main {
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
+    margin-top: 163.8px;
 }
 
 #shoppingCart {
@@ -102,4 +103,93 @@ a {
 
 .productType {
     margin-top: 0px;
+}
+
+#userNameTxt {
+    margin-right: 10px;
+}
+
+#passwordTxt {
+    margin-right: 10px;
+}
+
+#userName {
+    margin-bottom: 15px;
+}
+
+.logInInput {
+    border: none;
+    outline: none;
+}
+
+#logInButton {
+    margin-top: 20px;
+}
+
+.dropdownContainer {
+    margin-left: 2vw;
+}
+
+.dropdownContainer a {
+    display: block;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+}
+
+.dropdownDiv {
+    position: relative;
+    display: inline-block;
+}
+
+#estradiolDropdownContainer {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #FF1CAA;
+}
+
+#estradiolDropdown:hover #estradiolDropdownContainer {
+    display: block;
+}
+
+#progesteroneDropdownContainer {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #FF1CAA;
+}
+
+#progesteroneDropdown:hover #progesteroneDropdownContainer {
+    display: block;
+}
+
+#antiandrogensDropdownContainer {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #FF1CAA;
+}
+
+#antiandrogensDropdown:hover #antiandrogensDropdownContainer {
+    display: block;
+}
+
+#SERMDropdownContainer {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #FF1CAA;
+}
+
+#SERMDropdown:hover #SERMDropdownContainer {
+    display: block;
 }

@@ -6,6 +6,7 @@ function changeContrast() { //changes the contrast to the opposite, adds or remo
     const body = document.body;
     const top = document.getElementById("top");
     const internalAs = document.getElementsByClassName("internal");
+    const dropDownContainers = document.getElementsByClassName("dropdownContainer");
     const firstColor = '#FF1CAA';
     const secondColor = '#FFAAFF';
     if (button.innerText == "More Contrast") {
@@ -13,6 +14,9 @@ function changeContrast() { //changes the contrast to the opposite, adds or remo
         body.style.backgroundColor = secondColor;
         top.style.backgroundColor = secondColor;
         main.style.backgroundColor = secondColor;
+        for (ddContainer of dropDownContainers) {
+            ddContainer.style.backgroundColor = secondColor;
+        }
         if (getUrlVars()["contrast"] == undefined) {
             window.history.pushState("", "Estra Labs More Contrast", "?&contrast=1") //add variable to URI
         }
@@ -24,6 +28,9 @@ function changeContrast() { //changes the contrast to the opposite, adds or remo
         body.style.backgroundColor = firstColor;
         top.style.backgroundColor = firstColor;
         main.style.backgroundColor = firstColor;
+        for (ddContainer of dropDownContainers) {
+            ddContainer.style.backgroundColor = firstColor;
+        }
         window.location.search = ""; //remove variable from URI
         for (i = 0; i < internalAs.length; i++) {
             internalAs[i].href = internalAs[i].href.slice(0, internalAs[i].href.indexOf('?')); //remove variable from a tags

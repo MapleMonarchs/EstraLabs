@@ -20,7 +20,7 @@ h1, h2, h3, p, a, #userNameTxt, #userName, #logIn, #accountActions, #password, #
 }
 
 body {
-    background-color: #FF1CAA;
+    background-color: #FFAAFF;
 }
 
 .navLinks {
@@ -67,7 +67,7 @@ a {
 }
 
 #top {
-    background-color: #FF1CAA;
+    background-color: #FFAAFF;
     text-align: right;
     position: fixed;
     width: 100vw;
@@ -170,7 +170,7 @@ a {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    background-color: #FF1CAA;
+    background-color: #FFAAFF;
 }
 
 #estradiolDropdown:hover #estradiolDropdownContainer {
@@ -183,7 +183,7 @@ a {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    background-color: #FF1CAA;
+    background-color: #FFAAFF;
 }
 
 #progesteroneDropdown:hover #progesteroneDropdownContainer {
@@ -196,7 +196,7 @@ a {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    background-color: #FF1CAA;
+    background-color: #FFAAFF;
 }
 
 #antiandrogensDropdown:hover #antiandrogensDropdownContainer {
@@ -209,7 +209,7 @@ a {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    background-color: #FF1CAA;
+    background-color: #FFAAFF;
 }
 
 #SERMDropdown:hover #SERMDropdownContainer {

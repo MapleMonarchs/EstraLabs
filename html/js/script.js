@@ -13,10 +13,10 @@ function changeContrast() { //changes the contrast to the opposite, adds or remo
     const top = document.getElementById("top");
     const internalAs = document.getElementsByClassName("internal");
     const dropDownContainers = document.getElementsByClassName("dropdownContainer");
-    const firstColor = '#FF1CAA';
-    const secondColor = '#FFAAFF';
-    if (button.innerText == "More Contrast") {
-        button.innerHTML = "Less Contrast";
+    const secondColor = '#FF1CAA';
+    const firstColor = '#FFAAFF';
+    if (button.innerText == "Less Contrast") {
+        button.innerHTML = "More Contrast";
         body.style.backgroundColor = secondColor;
         top.style.backgroundColor = secondColor;
         main.style.backgroundColor = secondColor;
@@ -30,7 +30,7 @@ function changeContrast() { //changes the contrast to the opposite, adds or remo
             internalAs[i].href += "?&contrast=1"; //add variable to a tags
         }
     } else {
-        button.innerHTML = "More Contrast";
+        button.innerHTML = "Less Contrast";
         body.style.backgroundColor = firstColor;
         top.style.backgroundColor = firstColor;
         main.style.backgroundColor = firstColor;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Estra Labs</title>
+    <title>Estra Labs - Log In</title>
     <link rel="icon" href="images\favicon.ico" type="image/x-icon" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
     <div id="top">
         <header>
             <h1 id="headerHeadline">
-                <a href="index.html" class="internal"><img src="images/EstraLabs11-1.png" height="80" /></a>
+                <a href="..\index.html" class="internal"><img src="images/EstraLabs11-1.png" height="80" /></a>
             </h1>
         </header>
         <nav>
@@ -48,13 +48,27 @@
                         <a class="internal" href="ProductHTMLs/SERMs/raloxifene.html" style="padding-top: 12px;">Raloxifene</a>
                     </div>
                 </div>
-                <a class="navLinks internal" href="login.html">Log In/Sign Up</a>
+                <a class="navLinks internal" id="logInNav" href="login.html">Log In/Sign Up</a>
+                <a class="navLinks internal" id="accNav" href="login.html">Hello, </a>
             </div>
             <a id="shoppingCart" class="internal" href="cart.html"><img src="images\cart.png" width="35" /></a>
         </nav>
     </div>
     <main>
-        <h1>hallu</h1>
+        <div id="logIn">
+            <h2>Log In</h2>
+            <div id="userName">
+                <span id="userNameTxt">User Name:</span><input class="logInInput" type="text" />
+            </div>
+            <div id="password">
+                <span id="passwordTxt">Password:</span><input class="logInInput" type="password" />
+            </div>
+            <button id="logInButton">
+                Log In!
+            </button>
+            <br />
+            <a class="internal" style="margin-top: 10px;" href="signup.html">Sign up here</a>
+        </div>
     </main>
     <footer>
         <p id="copyright">&copy; <span id="year"></span> EstraLabs</p>

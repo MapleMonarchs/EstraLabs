@@ -1,4 +1,10 @@
 let productsPerLine = 3; //Number of columns in the product grid
+let logOn = {
+    "fName": "",
+    "sName": "",
+    "uName": ",",
+    "eMail": ""
+};
 
 function changeContrast() { //changes the contrast to the opposite, adds or removes the relevant variable to the URIs in all a tags, and in the adressbar
     const button = document.getElementById("contrastButton");
@@ -53,6 +59,7 @@ function load() { //happens on site load
     positionProducts();
     assignMaxWidths();
     assignMinHeight();
+    loggedOn();
 }
 
 function checkContrast() {
@@ -100,4 +107,18 @@ function assignMinHeight() {
     const main = document.getElementsByTagName("main")[0];
     const footer = document.getElementsByTagName("footer")[0];
     main.style.minHeight = (window.innerHeight - (parseInt(window.getComputedStyle(main).marginTop) + footer.offsetHeight + parseInt(window.getComputedStyle(footer).marginBottom) + parseInt(window.getComputedStyle(footer).marginTop))).toString() + "px";
+}
+
+function loggedOn() {
+    const logNav = document.getElementById("logInNav");
+    const accNav = document.getElementById("accNav");
+    if (logOn.uName != "") {
+        logNav.style.display = "none";
+        accNav.style.display = "inline";
+        if (logOn.fName != "") {
+            accNav.innerHTML = "Hello, " + logOn.fName;
+        } else {
+            accNav.innerHTML = "Hello, " + logOn.uName;
+        }
+    }
 }

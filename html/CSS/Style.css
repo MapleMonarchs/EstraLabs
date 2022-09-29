@@ -1,4 +1,4 @@
-h1, h2, h3, p, a, #userNameTxt, #userName, #logIn, #password, #passwordTxt {
+h1, h2, h3, p, a, #userNameTxt, #userName, #logIn, #accountActions, #password, #passwordTxt {
     text-align: center;
     font-family: 'OCR A';
     color: #0000FF;
@@ -136,7 +136,7 @@ a {
     outline: none;
 }
 
-#logInButton {
+#logInButton, #logOffButton, #changeMailShowButton, #changePWShowButton {
     margin-top: 20px;
     margin-bottom: 20px;
     border: none;
@@ -217,5 +217,9 @@ a {
 }
 
 #accNav {
+    display: none;
+}
+
+#changeMailHidable, #changePWHidable {
     display: none;
 }

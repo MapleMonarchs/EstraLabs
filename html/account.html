@@ -49,25 +49,49 @@
                     </div>
                 </div>
                 <a class="navLinks internal" id="logInNav" href="login.html">Log In/Sign Up</a>
-                <a class="navLinks internal" id="accNav" href="login.html">Hello, </a>
+                <a class="navLinks internal" id="accNav" href="account.html">Hello, </a>
             </div>
             <a id="shoppingCart" class="internal" href="cart.html"><img src="images\cart.png" width="35" /></a>
         </nav>
     </div>
     <main>
-        <div id="logIn">
-            <h2>Log In</h2>
-            <div id="userName">
-                <span id="userNameTxt">User Name:</span><input class="logInInput" type="text" />
+        <div id="accountActions">
+            <h2 class="nameField">
+                Hello,
+            </h2>
+            <div id="logOff">
+                <button id="logOffButton">
+                    Log Off!
+                </button>
             </div>
-            <div id="password">
-                <span id="passwordTxt">Password:</span><input class="logInInput" type="password" />
+            <div id="changeMail">
+                <button id="changeMailShowButton" onclick="changeMail()">
+                    Change E-Mail Address!
+                </button>
+                <div id="changeMailHidable">
+                    <div class="logInText">
+                        <span id="userNameTxt">New Mail Address:</span><input class="logInInput" type="text" />
+                    </div>
+                    <div>
+                        <span id="userNameTxt">Confirm its you with your current password:</span><input class="logInInput" type="password" />
+                    </div>
+                    <span id="errorMessageMail"></span>
+                </div>
             </div>
-            <button id="logInButton">
-                Log In!
-            </button>
-            <br />
-            <a class="internal" style="margin-top: 10px;" href="signup.html">Sign up here</a>
+            <div id="changePW">
+                <button id="changePWShowButton" onclick="changePW()">
+                    Change Password!
+                </button>
+                <div id="changePWHidable">
+                    <div class="logInText">
+                        <span id="userNameTxt">New password:</span><input class="logInInput" type="password" />
+                    </div>
+                    <div>
+                        <span id="userNameTxt">Confirm new password:</span><input class="logInInput" type="password" />
+                    </div>
+                    <span id="errorMessagePW"></span>
+                </div>
+            </div>
         </div>
     </main>
     <footer>

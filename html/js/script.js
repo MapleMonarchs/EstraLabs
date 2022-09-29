@@ -112,13 +112,61 @@ function assignMinHeight() {
 function loggedOn() {
     const logNav = document.getElementById("logInNav");
     const accNav = document.getElementById("accNav");
+    const nameTexts = document.getElementsByClassName("nameField");
     if (logOn.uName != "") {
         logNav.style.display = "none";
         accNav.style.display = "inline";
         if (logOn.fName != "") {
             accNav.innerHTML = "Hello, " + logOn.fName;
+            for (nameTxt of nameTexts) {
+                nameTxt.innerHTML = "Hello, " + logOn.fName;
+            }
         } else {
             accNav.innerHTML = "Hello, " + logOn.uName;
+            for (nameTxt of nameTexts) {
+                nameTxt.innerHTML = "Hello, " + logOn.uName;
+            }
         }
+    } else {
+        logNav.style.display = "inline";
+        accNav.style.display = "none";
+    }
+}
+
+function changeMail() {
+    const changeContainer = document.getElementById("changeMailHidable");
+    const inputs = document.getElementsByClassName("logInInput");
+    const errorSpan = document.getElementById("errorMessageMail");
+    errorSpan.innerHTML = "";
+    if (window.getComputedStyle(changeContainer).display == "none") {
+        changeContainer.style.display = "inline";
+    } else if (inputs[0].value == "" && inputs[1].value == "") {
+        changeContainer.style.display = "none";
+    } else if (inputs[0].value == "" && inputs[1].value != "") {
+        errorSpan.innerHTML = "Please enter a new e-mail address!";
+    } else if (inputs[0].value != "" && inputs[1].value == "") {
+        errorSpan.innerHTML = "Please enter your password!";
+    } else {
+        // TODO: change Mail here
+        changeContainer.style.display = "none";
+    }
+}
+
+function changePW() {
+    const changeContainer = document.getElementById("changePWHidable");
+    const inputs = document.getElementsByClassName("logInInput");
+    const errorSpan = document.getElementById("errorMessagePW");
+    errorSpan.innerHTML = "";
+    if (window.getComputedStyle(changeContainer).display == "none") {
+        changeContainer.style.display = "inline";
+    } else if (inputs[2].value == "" && inputs[3].value == "") {
+        changeContainer.style.display = "none";
+    } else if (inputs[2].value == "" && inputs[3].value != "") {
+        errorSpan.innerHTML = "Please enter a new password!";
+    } else if (inputs[2].value != "" && inputs[3].value == "") {
+        errorSpan.innerHTML = "Please confirm your new password!";
+    } else {
+        // TODO: change Mail here
+        changeContainer.style.display = "none";
     }
 }

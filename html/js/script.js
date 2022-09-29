@@ -2,7 +2,7 @@ let productsPerLine = 3; //Number of columns in the product grid
 let logOn = {
     "fName": "",
     "sName": "",
-    "uName": ",",
+    "uName": "",
     "eMail": ""
 };
 

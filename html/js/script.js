@@ -1,5 +1,5 @@
 let productsPerLine = 3; //Number of columns in the product grid
-let logOn = {
+let logOn = { //TODO: integrate with DB
     "fName": "",
     "sName": "",
     "uName": "",
@@ -97,25 +97,25 @@ function resize() { //happens on site resize
     assignMinHeight();
 }
 
-function assignMaxWidths() {
+function assignMaxWidths() { //sets the maximum width of the Div of Nav links at the top
     const nav = document.getElementsByTagName("nav")[0];
-    const navLinksSpan = document.getElementById("navLinks");
-    navLinksSpan.style.maxWidth = (1.02*nav.offsetWidth - 548).toString() +"px";
+    const navLinksDiv = document.getElementById("navLinks");
+    navLinksDiv.style.maxWidth = (1.02*nav.offsetWidth - 548).toString() +"px";
 }
 
-function assignMinHeight() {
+function assignMinHeight() { //assigns a minimum height to the main tag, so as for the footer to always be at the bottom of the page
     const main = document.getElementsByTagName("main")[0];
     const footer = document.getElementsByTagName("footer")[0];
     main.style.minHeight = (window.innerHeight - (parseInt(window.getComputedStyle(main).marginTop) + footer.offsetHeight + parseInt(window.getComputedStyle(footer).marginBottom) + parseInt(window.getComputedStyle(footer).marginTop))).toString() + "px";
 }
 
-function loggedOn() {
+function loggedOn() { //checks whether the logOn object has a non-empty user name property, i.e. whether the user is logged on
     const logNav = document.getElementById("logInNav");
     const accNav = document.getElementById("accNav");
     const nameTexts = document.getElementsByClassName("nameField");
     if (logOn.uName != "") {
-        logNav.style.display = "none";
-        accNav.style.display = "inline";
+        logNav.style.display = "none"; //disables the "log in" in the nav
+        accNav.style.display = "inline-block"; //puts a link to the account page into the nav
         if (logOn.fName != "") {
             accNav.innerHTML = "Hello, " + logOn.fName;
             for (nameTxt of nameTexts) {
@@ -128,45 +128,55 @@ function loggedOn() {
             }
         }
     } else {
-        logNav.style.display = "inline";
+        logNav.style.display = "inline-block"; //restores the default
         accNav.style.display = "none";
     }
 }
 
-function changeMail() {
+function changeMail() { //function is called when the Change Mail button is pressed. If the fields are not displayed, they will now be displayed, otherwise the input will be checked
     const changeContainer = document.getElementById("changeMailHidable");
     const inputs = document.getElementsByClassName("logInInput");
     const errorSpan = document.getElementById("errorMessageMail");
     errorSpan.innerHTML = "";
     if (window.getComputedStyle(changeContainer).display == "none") {
         changeContainer.style.display = "inline";
-    } else if (inputs[0].value == "" && inputs[1].value == "") {
+    } else if (inputs[0].value == "" && inputs[1].value == "") { //if the button is clicked with both fields empty, they are hidden again
         changeContainer.style.display = "none";
-    } else if (inputs[0].value == "" && inputs[1].value != "") {
+    } else if (inputs[0].value == "" && inputs[1].value != "") { //if the pw field is filled, yet the mail field is empty, an error message is displayed
         errorSpan.innerHTML = "Please enter a new e-mail address!";
-    } else if (inputs[0].value != "" && inputs[1].value == "") {
+    } else if (inputs[0].value != "" && inputs[1].value == "") { //if the mail field is filled, yet the pw field is empty, an error message is displayed
         errorSpan.innerHTML = "Please enter your password!";
-    } else {
+    } //TODO: add other failure conditions, such as "invalid mail address"/"wrong pw"
+    else { //Hides and empties the fields if the action has been performed properly
         // TODO: change Mail here
         changeContainer.style.display = "none";
+        for (let i = 0; i < 2; i++) {
+            inputs[i].value = "";
+        }
     }
 }
 
-function changePW() {
+function changePW() {//function is called when the Change PW button is pressed. If the fields are not displayed, they will now be displayed, otherwise the input will be checked
     const changeContainer = document.getElementById("changePWHidable");
     const inputs = document.getElementsByClassName("logInInput");
     const errorSpan = document.getElementById("errorMessagePW");
     errorSpan.innerHTML = "";
     if (window.getComputedStyle(changeContainer).display == "none") {
         changeContainer.style.display = "inline";
-    } else if (inputs[2].value == "" && inputs[3].value == "") {
+    } else if (inputs[2].value == "" && inputs[3].value == "" && inputs[4].value == "") { //if the button is clicked with all fields empty, they are hidden again (and yes the indices are hardcoded, this will never pose a problem)
         changeContainer.style.display = "none";
-    } else if (inputs[2].value == "" && inputs[3].value != "") {
+    } else if (inputs[2].value == "" && (inputs[3].value != "" || inputs[4].value != "")) { //else if the confirm new pw and/or old pw field is filled, yet the original new pw field is empty, an error message is displayed
         errorSpan.innerHTML = "Please enter a new password!";
-    } else if (inputs[2].value != "" && inputs[3].value == "") {
+    } else if ((inputs[2].value != "" || inputs[4].value != "") && inputs[3].value == "") { //else if the new password and/or old password field is filled, yet the confirm new pw field is empty, en error message is displayed
         errorSpan.innerHTML = "Please confirm your new password!";
-    } else {
+    } else if ((inputs[2].value != "" || inputs[3].value != "") && inputs[4].value == "") { //else if the new pw is entered and/or confirmed, yet the old one has not been entered, an error message is displayed
+        errorSpan.innerHTML = "Please confirm with your old password!";
+    } //TODO: add other failure conditions, such as "invalid mail address"/"wrong pw"
+    else { //Hides and empties the fields if the action has been performed properly
         // TODO: change Mail here
         changeContainer.style.display = "none";
+        for (let i = 2; i < 5; i++) {
+            inputs[i].value = "";
+        }
     }
 }

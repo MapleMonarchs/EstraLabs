@@ -171,12 +171,28 @@ function changePW() {//function is called when the Change PW button is pressed. 
         errorSpan.innerHTML = "Please confirm your new password!";
     } else if ((inputs[2].value != "" || inputs[3].value != "") && inputs[4].value == "") { //else if the new pw is entered and/or confirmed, yet the old one has not been entered, an error message is displayed
         errorSpan.innerHTML = "Please confirm with your old password!";
-    } //TODO: add other failure conditions, such as "invalid mail address"/"wrong pw"
+    } else if (inputs[2].value != inputs[3].value) { //else if the new pw is entered and/or confirmed, yet the old one has not been entered, an error message is displayed
+        errorSpan.innerHTML = "New password and confirm new password do not match!";
+    } //TODO: add other failure conditions, such as "invalid pw"/"wrong old pw"
     else { //Hides and empties the fields if the action has been performed properly
         // TODO: change Mail here
         changeContainer.style.display = "none";
         for (let i = 2; i < 5; i++) {
             inputs[i].value = "";
         }
+    }
+}
+
+function pwKeyUp() {
+    const key = event.key;
+    if (key == 'Enter') {
+        changePW();
+    }
+}
+
+function mailKeyUp() {
+    const key = event.key;
+    if (key == 'Enter') {
+        changeMail();
     }
 }

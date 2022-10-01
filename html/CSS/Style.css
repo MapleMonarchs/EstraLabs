@@ -23,6 +23,14 @@ body {
     background-color: #FFAAFF;
 }
 
+a:hover {
+    cursor: url('../images/cursor-pointer.png') 5 8, pointer;
+}
+
+html {
+    cursor: url('../images/cursor-default.png') 5 8, default;
+}
+
 .navLinks {
     padding-left: 2vw;
     font-size: 20px;
@@ -146,6 +154,10 @@ a {
     font-weight: bold;
     color: #FFFFFF;
     background-color: #000000;
+}
+
+#logInButton:hover, #logOffButton:hover, #changeMailShowButton:hover, #changePWShowButton:hover, #contrastButton:hover {
+    cursor: url('../images/cursor-pointer.png') 5 8, pointer;
 }
 
 .dropdownContainer {

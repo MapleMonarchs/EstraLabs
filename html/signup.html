@@ -67,24 +67,24 @@
         <div id="logIn">
             <h2>Sign Up</h2>
             <div class="logInText">
-                <span id="userNameTxt">First Name:</span><input class="logInInput" type="text" />
+                <span id="userNameTxt">First Name:</span><input class="logInInput" type="text" onkeyup="signUpKeyUp()"/>
             </div>
             <div class="logInText">
-                <span id="userNameTxt">Surname:</span><input class="logInInput" type="text" />
+                <span id="userNameTxt">Surname:</span><input class="logInInput" type="text" onkeyup="signUpKeyUp()"/>
             </div>
             <div class="logInText">
-                <span id="userNameTxt">User Name:</span><input class="logInInput" type="text" /><span class="requiredStar">*</span>
+                <span id="userNameTxt">User Name:</span><input class="logInInput" type="text" onkeyup="signUpKeyUp()"/><span class="requiredStar">*</span>
             </div>
             <div class="logInText">
-                <span id="userNameTxt">E-Mail:</span><input class="logInInput" type="text" /><span class="requiredStar">*</span>
+                <span id="userNameTxt">E-Mail:</span><input class="logInInput" type="text" onkeyup="signUpKeyUp()"/><span class="requiredStar">*</span>
             </div>
             <div id="password">
-                <span id="passwordTxt">Password:</span><input class="logInInput" type="password" /><span class="requiredStar">*</span>
+                <span id="passwordTxt">Password:</span><input class="logInInput" type="password" onkeyup="signUpKeyUp()"/><span class="requiredStar">*</span>
             </div>
             <div id="confirmPassword">
-                <span id="passwordTxt">Confirm Password:</span><input class="logInInput" type="password" /><span class="requiredStar">*</span>
+                <span id="passwordTxt">Confirm Password:</span><input class="logInInput" type="password" onkeyup="signUpKeyUp()"/><span class="requiredStar">*</span>
             </div>
-            <button id="logInButton">
+            <button id="logInButton" onclick="signUp()" onkeyup="signUpKeyUp()">
                 Sign Up!
             </button>
             <br />

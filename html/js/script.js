@@ -196,3 +196,39 @@ function mailKeyUp() {
         changeMail();
     }
 }
+
+function logInKeyUp() {
+    const key = event.key;
+    if (key == 'Enter') {
+        logIn();
+    }
+}
+
+function signUpKeyUp() {
+    const key = event.key;
+    if (key == 'Enter') {
+        signUp();
+    }
+}
+
+function logOffKeyUp() {
+    const key = event.key;
+    if (key == 'Enter') {
+        logOff();
+    }
+}
+
+function logIn() {
+    //log in code here
+    document.location.href = "account.html";
+}
+
+function signUp() {
+    //sign up code here
+    document.location.href = "account.html";
+}
+
+function logOff() {
+    //log off code here
+    document.location.href = "login.html";
+}

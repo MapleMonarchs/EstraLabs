@@ -24,10 +24,18 @@ function changeContrast() { //changes the contrast to the opposite, adds or remo
             ddContainer.style.backgroundColor = secondColor;
         }
         if (getUrlVars()["contrast"] == undefined) {
-            window.history.pushState("", "Estra Labs More Contrast", "?&contrast=1") //add variable to URI
+            if (Object.keys(getUrlVars()).length == 0) {
+                window.history.pushState("", "Estra Labs Less Contrast", "?&contrast=1") //add variable to URI
+            } else {
+                window.history.pushState("", "Estra Labs Less Contrast", window.location.href + "&contrast=1") //add variable to URI
+            }
         }
         for (i = 0; i < internalAs.length; i++) {
-            internalAs[i].href += "?&contrast=1"; //add variable to a tags
+            if (Object.keys(getAnchorVars(internalAs[i])).length == 0) {
+                internalAs[i].href += "?&contrast=1"; //add variable to a tags  
+            } else {
+                internalAs[i].href += "&contrast=1"; //add variable to a tags  
+            }
         }
     } else {
         button.innerHTML = "Less Contrast";
@@ -37,9 +45,17 @@ function changeContrast() { //changes the contrast to the opposite, adds or remo
         for (ddContainer of dropDownContainers) {
             ddContainer.style.backgroundColor = firstColor;
         }
-        window.location.search = ""; //remove variable from URI
+        if (Object.keys(getUrlVars()).length == 1) {
+            window.history.pushState("", "Estra Labs More Contrast", window.location.href.slice(0, window.location.href.indexOf('?'))); //remove variable from URI
+        } else {
+            window.history.pushState("", "Estra Labs More Contrast", window.location.href.slice(0, window.location.href.indexOf('&contrast=1')) + window.location.href.slice(window.location.href.indexOf('&contrast=1') + 11)); //remove variable from URI
+        }
         for (i = 0; i < internalAs.length; i++) {
-            internalAs[i].href = internalAs[i].href.slice(0, internalAs[i].href.indexOf('?')); //remove variable from a tags
+            if (Object.keys(getAnchorVars(internalAs[i])).length == 1) {
+                internalAs[i].href = internalAs[i].href.slice(0, internalAs[i].href.indexOf('?')); //remove variable from a tags
+            } else {
+                internalAs[i].href = internalAs[i].href.slice(0, internalAs[i].href.indexOf('&contrast=1')) + internalAs[i].href.slice(internalAs[i].href.indexOf('&contrast=1') + 11); //remove variable from a tags
+            }
         }
     }
 }
@@ -52,6 +68,17 @@ function getUrlVars() { //returns variables of the URI as an object
     });
     return vars;
 }
+
+
+function getAnchorVars(aTag) { //returns variables of the given a tag as an object
+    let vars = {};
+    let parts = aTag.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+
 
 function load() { //happens on site load
     checkContrast();
@@ -220,6 +247,7 @@ function logOffKeyUp() {
 
 function logIn() {
     //log in code here
+
     document.location.href = "account.html";
 }
 

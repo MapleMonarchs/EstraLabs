@@ -68,11 +68,12 @@
         <div id="logIn">
             <h2>Log In</h2>
             <div id="userName">
-                <span id="userNameTxt">User Name:</span><input class="logInInput" type="text" onkeyup="logInKeyUp()"/>
+                <span id="userNameTxt">User Name:</span><input class="logInInput" type="text" onkeyup="logInKeyUp()" />
             </div>
             <div id="password">
-                <span id="passwordTxt">Password:</span><input class="logInInput" type="password" onkeyup="logInKeyUp()"/>
+                <span id="passwordTxt">Password:</span><input class="logInInput" type="password" onkeyup="logInKeyUp()" />
             </div>
+            <span id="errorMessageLogIn"></span>
             <button id="logInButton" onclick="logIn()" onkeyup="logInKeyUp()">
                 Log In!
             </button>

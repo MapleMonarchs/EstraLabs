@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Estra Labs - Log In</title>
+    <title>Estra Labs - Sign Up</title>
     <link rel="icon" href="images\favicon.ico" type="image/x-icon" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,23 +68,24 @@
         <div id="logIn">
             <h2>Sign Up</h2>
             <div class="logInText">
-                <span id="userNameTxt">First Name:</span><input class="logInInput" type="text" onkeyup="signUpKeyUp()"/>
+                <span id="userNameTxt">First Name:</span><input class="logInInput" type="text" onkeyup="signUpKeyUp()" />
             </div>
             <div class="logInText">
-                <span id="userNameTxt">Surname:</span><input class="logInInput" type="text" onkeyup="signUpKeyUp()"/>
+                <span id="userNameTxt">Surname:</span><input class="logInInput" type="text" onkeyup="signUpKeyUp()" />
             </div>
             <div class="logInText">
-                <span id="userNameTxt">User Name:</span><input class="logInInput" type="text" onkeyup="signUpKeyUp()"/><span class="requiredStar">*</span>
+                <span id="userNameTxt">User Name:</span><input class="logInInput" type="text" onkeyup="signUpKeyUp()" /><span class="requiredStar">*</span>
             </div>
             <div class="logInText">
-                <span id="userNameTxt">E-Mail:</span><input class="logInInput" type="text" onkeyup="signUpKeyUp()"/><span class="requiredStar">*</span>
+                <span id="userNameTxt">E-Mail:</span><input class="logInInput" type="text" onkeyup="signUpKeyUp()" /><span class="requiredStar">*</span>
             </div>
             <div id="password">
-                <span id="passwordTxt">Password:</span><input class="logInInput" type="password" onkeyup="signUpKeyUp()"/><span class="requiredStar">*</span>
+                <span id="passwordTxt">Password:</span><input class="logInInput" type="password" onkeyup="signUpKeyUp()" /><span class="requiredStar">*</span>
             </div>
             <div id="confirmPassword">
-                <span id="passwordTxt">Confirm Password:</span><input class="logInInput" type="password" onkeyup="signUpKeyUp()"/><span class="requiredStar">*</span>
+                <span id="passwordTxt">Confirm Password:</span><input class="logInInput" type="password" onkeyup="signUpKeyUp()" /><span class="requiredStar">*</span>
             </div>
+            <span id="errorMessageSignUp"></span>
             <button id="logInButton" onclick="signUp()" onkeyup="signUpKeyUp()">
                 Sign Up!
             </button>

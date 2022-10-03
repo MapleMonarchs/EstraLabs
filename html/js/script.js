@@ -247,16 +247,102 @@ function logOffKeyUp() {
 
 function logIn() {
     //log in code here
+    const inputs = document.getElementsByClassName("logInInput");
+    const errorSpan = document.getElementById("errorMessageLogIn");
+    if (inputs[0].value != "" && inputs[1].value != "") {
+        let user = getUserByName(inputs[0].value);
+        if (user != undefined) {
+            let enteredPw = inputs[1].value;
+            let salt = user.salt;
+            let computedHash = hash(enteredPw, salt);
+            let dbHash = user.pwHash;
+            if (computedHash == dbHash) {
+                alert("logged On!"); //interface with db here
+                document.location.href = "account.html";
+            } else {
+                errorSpan.style.display = "block";
+                errorSpan.innerHTML = `Password does not correspond to the Account with the Username ${inputs[0].value}.`;
+            }
+        } else {
+            errorSpan.style.display = "block";
+            errorSpan.innerHTML = `There appears to be no Account with the Username ${inputs[0].value}.`;
+        }
+    } else if (inputs[1].value != "") {
+        errorSpan.style.display = "block";
+        errorSpan.innerHTML = "Please enter your Username!";
+    } else if (inputs[0].value != "") {
+        errorSpan.style.display = "block";
+        errorSpan.innerHTML = "Please enter your Password!";
+    } else {
+        errorSpan.style.display = "none";
+        errorSpan.innerHTML = "";
+    }
+}
 
-    document.location.href = "account.html";
+function getUserByName() {//interface with db here
+
 }
 
 function signUp() {
     //sign up code here
-    document.location.href = "account.html";
+    const inputs = document.getElementsByClassName("logInInput");
+    const errorSpan = document.getElementById("errorMessageSignUp");
+    let allReqFilled = inputs[2].value !== "" && inputs[3].value !== "" && inputs[4].value !== "" && inputs[5].value !== "";
+    //let allReqEmpty = inputs[2].value === "" && inputs[3].value === "" && inputs[4].value === "" && inputs[5].value === "";
+    let allEmpty = inputs[0].value === "" && inputs[1].value === "" && inputs[2].value === "" && inputs[3].value === "" && inputs[4].value === "" && inputs[5].value === "";
+    if (allReqFilled) {
+        if (inputs[4].value === inputs[5].value) {
+            let salt = newSalt();
+            let pw = inputs[5];
+            let createdHash = hash(pw, salt);
+            let user = {
+                "fName": inputs[0].value,
+                "sName": inputs[1].value,
+                "uName": inputs[3].value,
+                "mail": inputs[4].value,
+                "pwHash": createdHash,
+                "salt": salt,
+                "verifiedMail": false
+            }
+            //interface with db here
+            console.log(user)
+            //document.location.href = "verifyMail.html";
+        } else {
+            errorSpan.style.display = "block";
+            errorSpan.innerHTML = "New Password and Confirm Password do not match!";
+        }
+    } else if (allEmpty) {
+        errorSpan.style.display = "none";
+        errorSpan.innerHTML = "";
+    } else if (inputs[2].value == "") {
+        errorSpan.style.display = "block";
+        errorSpan.innerHTML = "Please enter your Username!";
+    } else if (inputs[3].value == "") {
+        errorSpan.style.display = "block";
+        errorSpan.innerHTML = "Please enter your E-Mail Address!";
+    } else if (inputs[4].value == "") {
+        errorSpan.style.display = "block";
+        errorSpan.innerHTML = "Please enter a Password!";
+    } else if (inputs[5].value == "") {
+        errorSpan.style.display = "block";
+        errorSpan.innerHTML = "Please confirm your Password!";
+    }
 }
 
 function logOff() {
     //log off code here
     document.location.href = "login.html";
+}
+
+function hash(pw, salt) {
+    let hashVal = pw + salt;
+    for (let i = 0; i < 60000; i++) {
+        hashVal = sha3_512(hashVal);
+    }
+    return hashVal;
+}
+
+function newSalt() {
+    let randomSalt = (self.crypto.getRandomValues(new Uint32Array(1))[0] * self.crypto.getRandomValues(new Uint32Array(1))[0] * self.crypto.getRandomValues(new Uint32Array(1))[0] * self.crypto.getRandomValues(new Uint32Array(1))[0]).toString(36);
+    return sha3_512(randomSalt);
 }

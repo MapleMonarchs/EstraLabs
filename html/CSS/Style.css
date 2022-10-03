@@ -261,3 +261,7 @@ a {
 #changeMailHidable, #changePWHidable {
     display: none;
 }
+
+#errorMessageLogIn, #errorMessageSignUp {
+    display: none;
+}

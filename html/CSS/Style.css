@@ -1,4 +1,4 @@
-h1, h2, h3, p, a, #userNameTxt, #userName, #logIn, #accountActions, #password, #passwordTxt {
+h1, h2, h3, p, a, #userNameTxt, #userName, #logIn, #accountActions, #password, #passwordTxt, #verifDiv {
     text-align: center;
     font-family: 'OCR A';
     color: #0000FF;
@@ -144,7 +144,7 @@ a {
     outline: none;
 }
 
-#logInButton, #logOffButton, #changeMailShowButton, #changePWShowButton {
+#logInButton, #logOffButton, #changeMailShowButton, #changePWShowButton, #newVerifMailButton, #changeMailVerifButton {
     margin-top: 20px;
     margin-bottom: 20px;
     border: none;
@@ -154,6 +154,11 @@ a {
     font-weight: bold;
     color: #FFFFFF;
     background-color: #000000;
+}
+
+#newVerifMailButton, #changeMailVerifButton {
+    font-size: 25px;
+    padding: 20px;
 }
 
 #logInButton:hover, #logOffButton:hover, #changeMailShowButton:hover, #changePWShowButton:hover, #contrastButton:hover {

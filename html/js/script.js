@@ -81,12 +81,14 @@ function getAnchorVars(aTag) { //returns variables of the given a tag as an obje
 
 
 function load() { //happens on site load
+    fillTop();
     checkContrast();
     updateYear();
     positionProducts();
     assignMaxWidths();
     assignMinHeight();
     loggedOn();
+    verifyTextFill();
 }
 
 function checkContrast() {
@@ -251,7 +253,7 @@ function logIn() {
     const errorSpan = document.getElementById("errorMessageLogIn");
     if (inputs[0].value != "" && inputs[1].value != "") {
         let user = getUserByName(inputs[0].value);
-        if (user != undefined) {
+        if (user) {
             let enteredPw = inputs[1].value;
             let salt = user.salt;
             let computedHash = hash(enteredPw, salt);
@@ -345,4 +347,67 @@ function hash(pw, salt) {
 function newSalt() {
     let randomSalt = (self.crypto.getRandomValues(new Uint32Array(1))[0] * self.crypto.getRandomValues(new Uint32Array(1))[0] * self.crypto.getRandomValues(new Uint32Array(1))[0] * self.crypto.getRandomValues(new Uint32Array(1))[0]).toString(36);
     return sha3_512(randomSalt);
+}
+
+function fillTop() {
+    if (window.location.href.indexOf("cart.html") !== -1 || window.location.href.indexOf("account.html") !== -1 || window.location.href.indexOf("login.html") !== -1 || window.location.href.indexOf("signup.html") !== -1 || window.location.href.indexOf("verifyMail.html") !== -1) {
+        document.getElementById("top").innerHTML = `
+        <header>
+            <h1 id="headerHeadline">
+                <a href="../index.html" class="internal"><img src="images/EstraLabs11-1.png" height="80" /></a>
+            </h1>
+        </header>
+        <nav>
+            <button id="contrastButton" onclick="changeContrast()">
+                Less Contrast
+            </button>
+            <div id="navLinks">
+                <div id="estradiolDropdown" class="dropdownDiv">
+                    <a class="navLinks internal" id="estradiol" href="ProductHTMLs/Estradiols/estradiol.html">Estradiol</a>
+                    <div id="estradiolDropdownContainer" class="dropdownContainer">
+                        <a class="internal" href="ProductHTMLs/Estradiols/estraena.html" style="padding-top: 12px;">Estraena</a>
+                        <a class="internal" href="ProductHTMLs/Estradiols/estraval.html">Estraval</a>
+                        <a class="internal" href="ProductHTMLs/Estradiols/estraena.html">Estra</a>
+                        <a class="internal" href="ProductHTMLs/Estradiols/estraena.html">Estra</a>
+                        <a class="internal" href="ProductHTMLs/Estradiols/estraena.html">Estoral</a>
+                    </div>
+                </div>
+                <div id="progesteroneDropdown" class="dropdownDiv">
+                    <a class="navLinks internal" id="progesterone" href="ProductHTMLs/Progesterone/progesterone.html">Progesterone</a>
+                    <div id="progesteroneDropdownContainer" class="dropdownContainer">
+                        <a class="internal" href="ProductHTMLs/Progesterone/progoral.html" style="padding-top: 12px;">Progoral</a>
+                    </div>
+                </div>
+                <div id="antiandrogensDropdown" class="dropdownDiv">
+                    <a class="navLinks internal" id="antiandrogens" href="ProductHTMLs/Antiandrogens/antiandrogens.html">Antiandrogens</a>
+                    <div id="antiandrogensDropdownContainer" class="dropdownContainer">
+                        <a class="internal" href="ProductHTMLs/Antiandrogens/antiandrogens.html" style="padding-top: 12px;">Antiandrogens</a>
+                    </div>
+                </div>
+                <div id="SERMDropdown" class="dropdownDiv">
+                    <a class="navLinks internal" id="SERMs" href="ProductHTMLs/SERMs/SERMs.html">SERMs</a>
+                    <div id="SERMDropdownContainer" class="dropdownContainer">
+                        <a class="internal" href="ProductHTMLs/SERMs/raloxifene.html" style="padding-top: 12px;">Raloxifene</a>
+                    </div>
+                </div>
+                <div id="logInNav" class="dropdownDiv">
+                    <a class="navLinks internal" href="login.html">Log In</a>
+                    <div id="logInNavDropdown" class="dropdownContainer">
+                        <a class="internal" href="signup.html" style="padding-top: 12px;">Sign Up</a>
+                    </div>
+                </div>
+                <div id="accountDropdown" class="dropdownDiv">
+                    <a class="navLinks internal" id="accNav" href="account.html">Hello, </a>
+                    <div id="accountDropdownContainer" class="dropdownContainer">
+                    </div>
+                </div>
+            </div>
+            <a id="shoppingCart" class="internal" href="cart.html"><img src="images/cart.png" width="35" /></a>
+        </nav>`
+    }
+}
+
+function verifyTextFill() {
+    let mail = logOn.eMail;
+    document.getElementById("verifyText").innerHTML = `Please verify that ${mail} is your actual mail address.`;
 }

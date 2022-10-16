@@ -14,20 +14,19 @@
 
     </div>
     <main>
-        <div id="logIn">
-            <h2>Log In</h2>
-            <div id="userName">
-                <span id="userNameTxt">User Name:</span><input class="logInInput" type="text" onkeyup="logInKeyUp()" />
-            </div>
-            <div id="password">
-                <span id="passwordTxt">Password:</span><input class="logInInput" type="password" onkeyup="logInKeyUp()" />
-            </div>
-            <span id="errorMessageLogIn"></span>
-            <button id="logInButton" onclick="logIn()" onkeyup="logInKeyUp()">
-                Log In!
-            </button>
+        <div id="verifDiv">
+            <h1 class="nameField">
+                Hello,
+            </h1>
+            <h2 id="verifyText">
+            </h2>
             <br />
-            <a class="internal" style="margin-top: 10px;" href="signup.html">Sign up here</a>
+            <h2>
+                If, even after a few moments, you did not receive an E-Mail, please first check your spam-folder and then request a new verification mail.
+            </h2>
+            <button id="newVerifMailButton">New verification mail</button>
+            <br />
+            <button id="changeMailVerifButton">Change mail address</button>
         </div>
     </main>
     <footer>

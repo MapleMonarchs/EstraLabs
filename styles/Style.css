@@ -1,0 +1,247 @@
+h1, h2, h3, p, #userNameTxt, #userName, #logIn, #accountActions, #password, #passwordTxt, #verifDiv {
+    text-align: center;
+    font-family: 'OCR A';
+    color: #0000FF;
+}
+
+.headerHeadlineText {
+    vertical-align: 40px;
+}
+
+body {
+    background-color: #FFAAFF;
+}
+
+/*
+link:hover {
+    cursor: url('../images/cursor-pointer.png') 5 8, pointer;
+}
+
+html {
+    cursor: url('../images/cursor-default.png') 5 8, default;
+}
+*/
+.navLinks {
+    padding-left: 2vw;
+    font-size: 20px;
+    vertical-align: -40px;
+}
+
+.navLinks {
+    position: fixed;
+    right: 300px;
+}
+
+.footer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#shoppingCart {
+    position: fixed;
+    right: 230px;
+    top: 25px;
+}
+
+
+.advertImage {
+    max-width:75vw;
+}
+
+#top {
+    background-color: #FFAAFF;
+    text-align: right;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    height: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#contrastButton {
+    position: fixed;
+    right: 10px;
+    top: 25px;
+    background-color: #000000;
+    border: none;
+    border-radius: 15px;
+    color: #FFFFFF;
+    font-family: 'OCR A';
+    font-size: 18pt;
+    padding: 8px;
+}
+
+.productsUl {
+    display: grid;
+    list-style-type: none;
+    padding-left: 0;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.productName {
+    margin-bottom: 5px;
+}
+
+.productType {
+    margin-top: 0px;
+}
+
+#userNameTxt {
+    margin-right: 10px;
+}
+
+#passwordTxt {
+    margin-right: 10px;
+}
+
+.logInText, #userName, #password {
+    margin-bottom: 15px;
+}
+
+.requiredStar {
+    font-size: 10pt;
+    vertical-align: 5pt;
+}
+
+.logInInput {
+    border: none;
+    outline: none;
+}
+
+#logInButton, #logOffButton, #changeMailShowButton, #changePWShowButton, #newVerifMailButton, #changeMailVerifButton {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 10px;
+    font-family: 'OCR A';
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+#newVerifMailButton, #changeMailVerifButton {
+    font-size: 25px;
+    padding: 20px;
+}
+
+/*
+#logInButton:hover, #logOffButton:hover, #changeMailShowButton:hover, #changePWShowButton:hover, #contrastButton:hover {
+    cursor: url('../images/cursor-pointer.png') 5 8, pointer;
+}*/
+
+.dropdownContainer {
+    margin-left: 2vw;
+}
+
+.dropdownContainer a {
+    display: block;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+}
+
+.dropdownDiv {
+    position: relative;
+    display: inline-block;
+}
+
+#estradiolDropdownContainer {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #FFAAFF;
+}
+
+#estradiolDropdown:hover #estradiolDropdownContainer {
+    display: block;
+}
+
+#progesteroneDropdownContainer {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #FFAAFF;
+}
+
+#progesteroneDropdown:hover #progesteroneDropdownContainer {
+    display: block;
+}
+
+#antiandrogensDropdownContainer {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #FFAAFF;
+}
+
+#antiandrogensDropdown:hover #antiandrogensDropdownContainer {
+    display: block;
+}
+
+#SERMDropdownContainer {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #FFAAFF;
+}
+
+#SERMDropdown:hover #SERMDropdownContainer {
+    display: block;
+}
+
+#logInNavDropdown {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #FFAAFF;
+}
+
+#logInNav:hover #logInNavDropdown {
+    display: block;
+}
+
+#accountDropdownContainer {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #FFAAFF;
+}
+
+#accountDropdown:hover #accountDropdownContainer {
+    display: block;
+}
+
+#accNav {
+    display: none;
+}
+
+#changeMailHidable, #changePWHidable {
+    display: none;
+}
+
+#errorMessageLogIn, #errorMessageSignUp {
+    display: none;
+}

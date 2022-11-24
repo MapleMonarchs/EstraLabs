@@ -1,0 +1,10 @@
+.headerHeadline {
+    font-family: 'OCR A';
+    color: #0000FF;
+    text-align: left;
+    display: inline;
+    position: relative;
+    left: 0;
+    top: 10px;
+    margin: 0;
+}

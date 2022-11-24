@@ -1,0 +1,15 @@
+.back {
+    background-color: #FFAAFF;
+    margin-left: 0.1;
+    margin-right: 0.1;
+    margin-bottom: 0.1;
+    border-radius: 15px;
+
+}
+
+.copyright{
+    text-align: center;
+    font-family: 'OCR A';
+    color: #0000FF;
+    
+}

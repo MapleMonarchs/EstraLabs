@@ -1,0 +1,18 @@
+.DropdownDiv {
+    position: relative;
+    display: inline-block;
+}
+
+.DropdownContainer {
+    margin-left: 2vw;
+    display: none;
+    position: relative;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #FFAAFF;
+}
+
+.DropdownDiv:hover #DropdownContainer:hover {
+    display: block;
+}

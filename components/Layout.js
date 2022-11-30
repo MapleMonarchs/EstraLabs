@@ -9,6 +9,11 @@ export default function Layout({ children }) {
             <Head>
                 <link rel="shortcut icon" 
                 href="https://maplemonarchs.github.io/EstraLabs/images/favicon.ico"/>
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="EstraLabs" />
+                <meta property="og:url" content="https://maplemonarchs.github.io/EstraLabs" />
+                <meta property="og:image" content="https://maplemonarchs.github.io/EstraLabs/images/EstraLabs11-1.png" />
+                <meta property="og:description" content="uwu" />
             </Head>
             <div>
                 <Header/>

@@ -2,7 +2,6 @@ import Header from './Header'
 import Head from 'next/head';
 import Image from "next/image";
 import styles from './layout.module.css'
-import { NextSeo } from 'next-seo';
 
 export default function Layout({ children }) {
     return (

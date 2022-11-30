@@ -10,22 +10,23 @@ export default function Layout({ children }) {
             <Head>
                 <link rel="shortcut icon" 
                 href="https://maplemonarchs.github.io/EstraLabs/images/favicon.ico"/>
-                <NextSeo
-                        title="EstraLabs"
-                        description="uwu"
-                        canonical="https://maplemonarchs.github.io/EstraLabs"
-                        openGraph={{
-                        url: 'https://maplemonarchs.github.io/EstraLabs',
-                        title: 'EstraLabs',
-                        description: 'uwu',
-                        site_name: 'EstraLabs',
-                        }}
-                        twitter={{
-                        handle: '@handle',
-                        site: '@site',
-                        cardType: 'summary_large_image',
-                        }}
-                        />
+
+                {/*OGP for Twitter */}
+                <meta name="twitter:card" content="summary_large_image"></meta>
+                <meta property="twitter:title" content="EstraLabs" />
+                <meta property="twitter:description" content="uwu" />
+                <meta property='twitter:url' content='https://maplemonarchs.github.io/EstraLabs' />
+                <meta property="twitter:image" content="https://maplemonarchs.github.io/EstraLabs/images/EstraLabs1-1.png" />
+
+                {/* general purpose OGP for WhatsApp & co*/}
+                <meta property="og:type" content="Website"/>
+                <meta property="og:title" content="EstraLabs" />
+                <meta property="og:description" content="uwu" />
+                <meta property='og:url' content='https://maplemonarchs.github.io/EstraLabs' />
+                <meta property="og:image" content="https://maplemonarchs.github.io/EstraLabs/images/EstraLabs1-1.png" />
+                <meta property="og:image" content="https://maplemonarchs.github.io/EstraLabs/images/EstraLabs1-1small.png" />
+
+                
             </Head>
             <div>
                 <Header/>

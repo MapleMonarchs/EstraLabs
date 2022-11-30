@@ -16,7 +16,6 @@ export default function Header() {
                     />
                 </Link>
             </div>
-            <Dropdown/>
         </div>
     );
 }

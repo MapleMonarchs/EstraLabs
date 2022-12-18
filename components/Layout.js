@@ -6,6 +6,9 @@ import styles from './layout.module.css'
 export default function Layout({ children }) {
     return (
         <div className={styles.back}>
+             <div className={styles.header}>
+                <Header/>
+            </div>
             <Head>
                 <link rel="shortcut icon" 
                 href="https://maplemonarchs.github.io/EstraLabs/images/favicon.ico"/>
@@ -27,9 +30,6 @@ export default function Layout({ children }) {
 
                 
             </Head>
-            <div>
-                <Header/>
-            </div>
             {children}
 
             <footer>

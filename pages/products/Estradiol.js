@@ -1,4 +1,46 @@
-<!DOCTYPE html>
+import Layout from "../../components/Layout";
+import ProductCard from "../../components/ProductCard";
+
+export default function Estradiol() {
+    return (
+        <Layout >
+             <main>
+                    <ProductCard 
+                        href="./estraena" 
+                        imgsrc="https://maplemonarchs.github.io/EstraLabs/images/placeholderBottle.png" 
+                        name="Estraena" 
+                        type="Estradiol Enanthate Injections"
+                    />
+                    <ProductCard
+                        href="./estraval"
+                        imgsrc="https://maplemonarchs.github.io/EstraLabs/images/placeholderBottle.png"
+                        name="Estraval"
+                        type="Estradiol Valerate Injections"
+                    />
+                    <ProductCard
+                        href="./estraval"
+                        imgsrc="https://maplemonarchs.github.io/EstraLabs/images/placeholderBottle.png"
+                        name="Estra"
+                        type="Transdermal Estradiol"
+                    />
+                    <ProductCard
+                        href="./estraval"
+                        imgsrc="https://maplemonarchs.github.io/EstraLabs/images/placeholderBottle.png"
+                        name="Estra"
+                        type="Sublingual Estradiol"
+                    />
+                    <ProductCard
+                        href="./estraval"
+                        imgsrc="https://maplemonarchs.github.io/EstraLabs/images/placeholderBottle.png"
+                        name="Estoral"
+                        type="Estradiol Pills"
+                    />
+            </main>
+        </Layout>
+    )
+}
+
+/*<!DOCTYPE html>
 <html>
 <head>
     <title>Estra Labs - Estradiol</title>
@@ -63,17 +105,9 @@
             <a id="shoppingCart" class="internal" href="..\..\cart.html"><img src="../../images\cart.png" width="35" /></a>
         </nav>
     </div>
-    <main>
-        <ul class="productsUl">
-            <li><a class="internal products" href="../Estradiols/estraena.html"><img src="../../images/placeholderBottle.png" /><h1 class="productName">Estraena</h1><h2 class="productType">Estradiol Enanthate Injections</h2></a></li>
-            <li><a class="internal products" href="../Estradiols/estraval.html"><img src="../../images/placeholderBottle.png" /><h1 class="productName">Estraval</h1><h2 class="productType">Estradiol Valerate Injections</h2></a></li>
-            <li><a class="internal products" href="../Estradiols/estraval.html"><img src="../../images/placeholderBottle.png" /><h1 class="productName">Estra</h1><h2 class="productType">Transdermal Estradiol</h2></a></li>
-            <li><a class="internal products" href="../Estradiols/estraval.html"><img src="../../images/placeholderBottle.png" /><h1 class="productName">Estra</h1><h2 class="productType">Sublingual Estradiol</h2></a></li>
-            <li><a class="internal products" href="../Estradiols/estraval.html"><img src="../../images/placeholderBottle.png" /><h1 class="productName">Estoral</h1><h2 class="productType">Estradiol Pills</h2></a></li>
-        </ul>
-    </main>
+   
     <footer>
         <p id="copyright">&copy; <span id="year"></span> EstraLabs</p>
     </footer>
 </body>
-</html>
+</html>*/

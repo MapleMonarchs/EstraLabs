@@ -8,9 +8,10 @@ h1, h2, h3, p, #userNameTxt, #userName, #logIn, #accountActions, #password, #pas
     vertical-align: 40px;
 }
 
+/*
 body {
     background-color: #FFAAFF;
-}
+}*/
 
 /*
 link:hover {
@@ -244,4 +245,11 @@ html {
 
 #errorMessageLogIn, #errorMessageSignUp {
     display: none;
+}
+
+main{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }

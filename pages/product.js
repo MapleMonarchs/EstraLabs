@@ -1,4 +1,25 @@
-<!DOCTYPE html>
+import Layout from "../components/Layout";
+import Image from "next/image";
+
+export default function Product() {
+    return (
+        <Layout>
+                <p>aaaa</p>
+                <main>
+                     <Image 
+                        src= "https://maplemonarchs.github.io/EstraLabs/images/EstraenaSkincaretrans.png"
+                        height={500}
+                        width={1000}
+                        alt="Skincare" 
+                        //className={styles.estrogen}
+                    />
+                </main>
+        </Layout>
+    )
+}
+
+
+/*<!DOCTYPE html>
 <html>
 <head>
     <title>Estra Labs - Estrena</title>
@@ -70,4 +91,4 @@
         <p id="copyright">&copy; <span id="year"></span> EstraLabs</p>
     </footer>
 </body>
-</html>
+</html>*/

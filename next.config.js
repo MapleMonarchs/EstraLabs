@@ -3,7 +3,8 @@ module.exports = {
     images: {
       domains: [
         'maplemonarchs.github.io',
-        'inconspicuousbucket.s3.us-west-2.amazonaws.com'
+        'inconspicuousbucket.s3.us-west-2.amazonaws.com',
+        'localhost'
     ],
     },
   }
